@@ -1,0 +1,5 @@
+$("#comment_body").val("")
+model = new Blog.Models.Comment()
+model.set( <%= @comment.to_json.html_safe %>)
+comment_view = new Blog.Views.CommentShowView({comment: model})
+$(".list_comments").append(comment_view.render().el)
